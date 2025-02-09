@@ -1,5 +1,24 @@
-<header class="bg-orange-500 text-white p-4 relative z-50">
-    <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-lg font-bold cursor-pointer" routerLink="/">Digital Time Capsule</h1>
-    </div>
+<header class="bg-orange-700 text-white">
+    <nav class="flex justify-between items-center w-[92%] mx-auto">
+        <button type="button" class="md:hidden cursor-pointer" (click)="collapsed = !collapsed"
+            (window:resize)="collapsed = true">
+            <ion-icon class="text-3xl font-bold align-middle" name="menu-outline"></ion-icon>
+        </button>
+        <h1 class="text-xl font-bold cursor-pointer" routerLink="/">Digital Time Capsule</h1>
+        <div class="md:static absolute md:grow md:bg-transparent bg-orange-500 md:min-h-fit left-0 top-[8%] md:py-0 py-5 md:w-auto w-full md:block flex px-5 items-start place-content-center text-center"
+            [class.hidden]="collapsed">
+            <ul class="flex md:flex-row flex-col md:justify-center">
+                <li class="cursor-pointer hover:text-gray-300 md:border-b-0 md:border-r-2 border-b-2 border-black px-5 md:py-2 py-5"
+                    routerLink="/">Home</li>
+                <li class="cursor-pointer hover:text-gray-300 md:border-b-0 md:border-r-2 border-b-2 border-black px-5 md:py-2 py-5"
+                    routerLink="/">About Us</li>
+                <li class="cursor-pointer hover:text-gray-300 px-5 md:py-2 py-5" routerLink="/">Contact Us</li>
+            </ul>
+        </div>
+        <div class="text-center w-[193px]">
+            <button
+                class="bg-orange-400 px-5 py-2 my-3 rounded-full border border-orange-500 hover:bg-orange-500 hover:border-orange-400"
+                routerLink="/">Sign In</button>
+        </div>
+    </nav>
 </header>
